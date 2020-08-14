@@ -1,0 +1,157 @@
+<header></header>
+
+<body style="padding: 15px;">
+    
+
+<section class="property-binding" >
+    <!--<article> <h3> Título teste </h3> 
+        <p> String renderizada {{ url }}  </p>
+        <p> Resultad {{ 1+4 }} </p>
+        <p> Resultad {{ 1+4 + getValor() }} </p>
+        <p>Like course {{ cursoAngular &&  getLike()}} </p>
+    </article>
+   <article> <h3>Propety Binding</h3> 
+
+        <img src="{{urlImage}}"> <br>
+        <img [src]="urlImage">
+
+    </article> 
+-->
+    <article> <h3>Class e style binding</h3> 
+        <div> <!--Inicio class binding-->
+            Selecione uma classe
+            <select #classe (change)="0"> <!--Why 0?-->
+                <option value="alert-primary">Primario</option>
+                <option value="alert-secondary">Secundario</option>
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-danger">Perigo</option>
+                <option value="alert-warning">Aviso</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-light">Suave</option>
+                <option value="alert-dark">Escuro</option>
+              
+               
+
+            </select>
+            <br><br>
+
+            <div class="alert {{ classe.value }} " role="alert"> <!--Quando eh apenas um texto a selecionar-->
+                Texto colorido conforme valor da combobox.
+            </div>
+
+            <!--Quando eh varias opcoes-->
+            <div class="alert" role="alert" [class.alert-primary]="classe.value == 'alert-primary'">
+                A simple primary 
+              </div>
+              <div class="alert" role="alert" [class.alert-secondary]="classe.value == 'alert-secondary'">
+                A simple secondary 
+              </div>
+              <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
+                A simple success 
+              </div>
+              <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
+                A simple danger 
+              </div>
+              <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
+                A simple warning 
+              </div>
+              <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
+                A simple info 
+              </div>
+              <div class="alert" role="alert" [class.alert-light]="classe.value == 'alert-light'" >
+                A simple light 
+              </div>
+              <div class="alert" role="alert" [class.alert-dark]="classe.value == 'alert-dark'">
+                A simple dark 
+              </div>
+              <!--Fim class binding-->
+
+              <!--Inicio stylebinding-->
+              <div class="alert alert-danger" role="alert" [style.display]="classe.value== 'alert-danger' ? 'block': 'none' ">
+                Em caso de erro
+              </div>
+              <!--Fim style binding-->
+
+        </div>
+    </article>
+
+    <article>
+        <h3 style="margin-bottom: 45px;">Events binding</h3>
+        <div>
+           <button (click)="botaoClicado()" class="btn btn-primary" style="margin-bottom: 15px;">Clique-me</button> 
+
+           <br><br>
+           <input type="text" (keyup)="onKeyUp($event)" 
+           (keyup.enter)="salvarValor(campoInput.value)"
+           (blur) = "salvarValor(campoInput.value)"
+           style="margin-bottom: 45px;"
+           #campoInput
+           >
+            <p>
+               Valor atual {{ valorAtual }} 
+            </p>
+            <p>
+                Valor salvo {{ valorSalvo }} 
+             </p>
+            <br>
+            <span 
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.hightlight]="isMouseOver"
+            >
+                Passe o mouse sobre mim</span>
+        </div>
+    </article>
+
+
+</section>
+
+<section class="two-way-binding" >
+
+    <article>
+        <h3>Two-way data biding</h3>
+        <div>
+            <input type="text"
+               [value]="nome" 
+               (input)="nome = $event.target.value"
+            > <!--(evento)-->
+            
+            <input type="text"
+               [ngModel]="nome"
+               (ngModelChange)="nome = $event" 
+            ><!--(evento), ngModel - Propiedade representa uma entidade que pode ser ate um objeto 
+            ngModelChange evento, para quando campo for atualizado--> 
+
+            <input type="text" [(ngModel)]="nome">
+
+            <p>Você digitou {{ nome }} </p>
+        </div>
+
+        <div>
+          <p>Meu nome é  {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade </p>
+          <input type="text" [(ngModel)]="pessoa.nome">
+          <input type="text" [(ngModel)]="pessoa.idade">
+        </div>
+
+    </article>
+
+</section>
+
+<section class="input-output-propeties" >
+
+  <article>
+
+    <h3>Input/Output propeties</h3>
+
+    <app-curso [nome]='' ></app-curso>
+
+    <contador [valor]="valorInicial"
+     (mudouValor)="onMudouValor($event)" >
+    </contador>
+
+  </article>
+
+</section>
+
+
+</body>
