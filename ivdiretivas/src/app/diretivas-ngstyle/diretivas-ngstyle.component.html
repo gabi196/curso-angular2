@@ -1,0 +1,31 @@
+<!--<div>
+    <p>Meu nome é  {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade </p>
+    <input type="text" [(ngModel)]="pessoa.nome">
+    <input type="text" [(ngModel)]="pessoa.idade">
+  </div>-->
+
+<h5>Style com property binding (style binding)</h5>
+<button
+  [style.background]="ativo ? 'blue' : 'green'"
+  [style.color]="ativo ? 'white' : 'black'"
+  [style.fontWeight]="ativo ? 'bold' : 'normal'"
+  [style.fontSize]="tamanhoFonte + 'px'"
+  (click)="mudarAtivo()"
+>Mudar atributo ativo
+</button>
+<br>
+<input type="text" [(ngModel)]="tamanhoFonte">
+
+<!--Usando ngStyle-->
+<h5>Style com diretiva ngStyle</h5>
+<button
+  [ngStyle]="{
+     'background': (ativo ? 'blue' : 'green'),
+     'color': (ativo ? 'white' : 'black'),
+     'fontWeight': (ativo ? 'bold' : 'normal'),
+     'fontSize': (tamanhoFonte + 'px')
+  }"
+  (click)="mudarAtivo()"
+>Mudar atributo ativo
+</button>
+

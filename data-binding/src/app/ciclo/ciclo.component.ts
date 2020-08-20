@@ -17,27 +17,32 @@ export class CicloComponent implements OnInit, OnChanges, OnInit, DoCheck, After
     
   }
 
-  ngOnChanges(){
+  ngOnChanges(){ //propety-binding atualizado
     this.log('ngOnChanges');
   }
 
-  ngOnInit(): void {//faz chamada para o servidor
+  ngOnInit(): void {//faz chamada para o servidor, component inicializado
     this.log('ngOnInit');
   }
 
-  ngDoCheck() {
+  ngDoCheck() {// verificação de mudanças
     this.log('ngDoCheck');
   }
 
-  ngAfterContentInit(){
+  ngAfterContentInit(){// depois de inserir um conteudo externo na view
     this.log('ngAfterContentInit');
   }
 
-  ngAfterViewChecked(){
-    this.log('ngAfterViewChecked');
+  ngAfterContentChecked(){//a cada verificação do valor inserido
+    this.log('ngAfterContentInit');
   }
 
-  ngOnDestroy(){
+  ngAfterViewChecked(){// verificacao de conteudo / conteudo filho
+    this.log('ngAfterContentChecked');
+  }
+
+
+  ngOnDestroy(){// antes de diretiva/ conteudo destruido
     this.log('ngOnDestroy');
   }
 
