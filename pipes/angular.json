@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "servicos": {
+    "pipes": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/servicos",
+            "outputPath": "dist/pipes",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -66,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "servicos:build"
+            "browserTarget": "pipes:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "servicos:build:production"
+              "browserTarget": "pipes:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "servicos:build"
+            "browserTarget": "pipes:build"
           }
         },
         "test": {
@@ -92,7 +88,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -114,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "servicos:serve"
+            "devServerTarget": "pipes:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "servicos:serve:production"
+              "devServerTarget": "pipes:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "servicos",
+  "defaultProject": "pipes",
   "cli": {
-    "analytics": "95547318-aab7-4bb1-ae23-6783a5da5d40"
+    "analytics": "baef2f64-7db0-44e4-a1f7-9da9bdf05340"
   }
 }
