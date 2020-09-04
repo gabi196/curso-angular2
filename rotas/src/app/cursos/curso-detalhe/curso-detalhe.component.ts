@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConstantPool } from '@angular/compiler';
 import { Subscription } from 'rxjs';
 
-import { CursosService } from '../cursos/cursos.service';
+import { CursosService } from '../cursos.service';
 
 
 @Component({
