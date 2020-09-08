@@ -10,9 +10,12 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
 const cursosRoutes: Routes = [
-    { path: 'cursos', component: CursosComponent },
+    // { path: 'cursos', component: CursosComponent },
+    {
+      path: '', component: CursosComponent},
+    { path: 'cursos/naoEncontrado', component: CursoNaoEncontradoComponent },
     { path: 'cursos/:id', component: CursoDetalheComponent},
-    { path: 'naoEncontrado', component: CursoNaoEncontradoComponent },
+    
 ];
 
 export const routing: ModuleWithProviders<AppModule> = RouterModule.forChild(cursosRoutes);

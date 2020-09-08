@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { AlunosRoutingModule } from './alunos.routing.module';
 import { AlunosService } from './alunos.service';
 
 @NgModule({
-    imports: [CommonModule, AlunosRoutingModule],
+    imports: [CommonModule, AlunosRoutingModule, FormsModule],
     exports: [],
     declarations: [
         AlunosComponent, 
